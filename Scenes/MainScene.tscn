@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://1fjn7hd0wryb"]
+
+[ext_resource type="Script" uid="uid://c6xdbo3vajiiy" path="res://SCWIPTS/GameManager.cs" id="1_hpc76"]
+[ext_resource type="Script" uid="uid://bfio2ypfc4rsr" path="res://SCWIPTS/SceneManager.cs" id="2_tr2i4"]
+
+[node name="MainScene" type="Node3D"]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_hpc76")
+
+[node name="LevelManager" type="Node" parent="."]
+script = ExtResource("2_tr2i4")

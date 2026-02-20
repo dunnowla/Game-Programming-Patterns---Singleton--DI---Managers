@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://babj86ipfx6m7"]
+
+[ext_resource type="Script" uid="uid://d15by8ca14rtp" path="res://SCWIPTS/Options.cs" id="1_qqnya"]
+
+[node name="Options" type="Node3D"]
+script = ExtResource("1_qqnya")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 281.0
+offset_right = 656.0
+offset_bottom = 347.0
+
+[node name="Clear" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "CLEAR SCORE"
+
+[node name="Back" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "BACK"
+
+[connection signal="pressed" from="Control/VBoxContainer/Clear" to="." method="ClearButton"]
+[connection signal="pressed" from="Control/VBoxContainer/Back" to="." method="Back"]

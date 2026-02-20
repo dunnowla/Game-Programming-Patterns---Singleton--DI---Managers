@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://rkh3cbx5vdtp"]
+
+[ext_resource type="Script" uid="uid://d2hyuairs2jd4" path="res://SCWIPTS/Game.cs" id="1_iukft"]
+
+[node name="Game" type="Node3D" node_paths=PackedStringArray("timerText")]
+script = ExtResource("1_iukft")
+timerText = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 460.0
+offset_top = 309.0
+offset_right = 815.0
+offset_bottom = 332.0
+text = "TIMER: "

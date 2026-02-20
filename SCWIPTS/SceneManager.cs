@@ -1,0 +1,17 @@
+using Godot;
+using System;
+
+public partial class SceneManager : Node
+{
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		LoadScene("Menu");
+	}
+
+	public void LoadScene(string scene)
+	{
+		GetTree().ChangeSceneToFile("res://Scenes/"+scene+".tscn");
+	}
+}

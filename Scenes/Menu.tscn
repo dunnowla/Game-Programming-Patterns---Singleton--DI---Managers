@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyaobpxmx8rbn"]
+
+[ext_resource type="Script" uid="uid://b8meec8h04bph" path="res://SCWIPTS/Menu.cs" id="1_3kf3n"]
+
+[node name="Menu" type="Node3D" node_paths=PackedStringArray("highScoreText")]
+script = ExtResource("1_3kf3n")
+highScoreText = NodePath("Control/VBoxContainer/Label")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 515.0
+offset_top = 284.0
+offset_right = 738.0
+offset_bottom = 343.0
+
+[node name="Play" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="Options" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="Exit" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "EXIT"
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "HIGHSCORE: "
+
+[connection signal="pressed" from="Control/VBoxContainer/Play" to="." method="Play"]
+[connection signal="pressed" from="Control/VBoxContainer/Options" to="." method="Options"]
+[connection signal="pressed" from="Control/VBoxContainer/Exit" to="." method="Exit"]
