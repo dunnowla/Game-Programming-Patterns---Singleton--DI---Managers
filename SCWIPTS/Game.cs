@@ -1,13 +1,16 @@
 using Godot;
 using System;
 
-public partial class Game : Node3D
+public partial class Game : Node3D, ManagedScene
 {
 	[Export] public Label timerText;
 	private float timer = 10;
 	int stops = 0;
-
-
+	private SceneManager sceneManager;
+	public void Setup(SceneManager manager)
+	{
+		sceneManager = manager;
+	}
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
@@ -25,13 +28,11 @@ public partial class Game : Node3D
 		if(stops > 0)
 		{
 			scoreCalc();
-			var scenemanager = GetNode<SceneManager>("/root/SceneManager");
-			scenemanager.LoadScene("Menu");
+			sceneManager.LoadScene(0);
 		}
 		if(timer <= 0)
 		{
-			var scenemanager = GetNode<SceneManager>("/root/SceneManager");
-			scenemanager.LoadScene("Menu");
+			sceneManager.LoadScene(0);
 		}
 	}
 

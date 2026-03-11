@@ -1,10 +1,16 @@
 using Godot;
 using System;
 
-public partial class Menu : Node3D
+public partial class Menu : Node3D, ManagedScene
 {
 	[Export] public Label highScoreText;
 	float highScore;
+
+	private SceneManager sceneManager;
+	public void Setup(SceneManager manager)
+	{
+		sceneManager = manager;
+	}
 	public override void _Ready()
 	{
 		UpdateScore();
@@ -20,14 +26,12 @@ public partial class Menu : Node3D
 	}
 	public void Options()
 	{
-		var scenemanager = GetNode<SceneManager>("/root/SceneManager");
-		scenemanager.LoadScene("Options");
+		sceneManager.LoadScene(2);
 	}
 
 	public void Play()
 	{
-		var scenemanager = GetNode<SceneManager>("/root/SceneManager");
-		scenemanager.LoadScene("Game");
+		sceneManager.LoadScene(1);
 	} 
 
 	public void Exit()

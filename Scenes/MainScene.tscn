@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://1fjn7hd0wryb"]
+[gd_scene load_steps=6 format=3 uid="uid://1fjn7hd0wryb"]
 
 [ext_resource type="Script" uid="uid://c6xdbo3vajiiy" path="res://SCWIPTS/GameManager.cs" id="1_hpc76"]
 [ext_resource type="Script" uid="uid://bfio2ypfc4rsr" path="res://SCWIPTS/SceneManager.cs" id="2_tr2i4"]
+[ext_resource type="PackedScene" uid="uid://dyaobpxmx8rbn" path="res://Scenes/Menu.tscn" id="3_qxria"]
+[ext_resource type="PackedScene" uid="uid://rkh3cbx5vdtp" path="res://Scenes/Game.tscn" id="4_y4jh7"]
+[ext_resource type="PackedScene" uid="uid://babj86ipfx6m7" path="res://Scenes/Options.tscn" id="5_q68mp"]
 
 [node name="MainScene" type="Node3D"]
 
@@ -10,3 +13,4 @@ script = ExtResource("1_hpc76")
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("2_tr2i4")
+scenes = Array[PackedScene]([ExtResource("3_qxria"), ExtResource("4_y4jh7"), ExtResource("5_q68mp")])

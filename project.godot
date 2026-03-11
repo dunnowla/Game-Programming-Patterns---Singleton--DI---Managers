@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://SCWIPTS/GameManager.cs"
-SceneManager="*res://SCWIPTS/SceneManager.cs"
 
 [dotnet]
 

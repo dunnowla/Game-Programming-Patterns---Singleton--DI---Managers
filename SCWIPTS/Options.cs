@@ -1,18 +1,13 @@
 using Godot;
 using System;
 
-public partial class Options : Node3D
+public partial class Options : Node3D, ManagedScene
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	private SceneManager sceneManager;
+	public void Setup(SceneManager manager)
 	{
+		sceneManager = manager;
 	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-
 	public void ClearButton()
 	{
 		var gameManager = GetNode<GameManager>("/root/GameManager");
@@ -21,7 +16,6 @@ public partial class Options : Node3D
 
 	public void Back()
 	{
-		var scenemanager = GetNode<SceneManager>("/root/SceneManager");
-		scenemanager.LoadScene("Menu");
+		sceneManager.LoadScene(0);
 	}
 }

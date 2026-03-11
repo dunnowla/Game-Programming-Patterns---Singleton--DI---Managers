@@ -1,17 +1,32 @@
 using Godot;
 using System;
+using System.Runtime.CompilerServices;
 
 public partial class SceneManager : Node
 {
+	[Export] PackedScene[] scenes;
+	private Node currentScene;
 
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		LoadScene("Menu");
+		LoadScene(0);
 	}
 
-	public void LoadScene(string scene)
+	public void LoadScene(int index)
 	{
-		GetTree().ChangeSceneToFile("res://Scenes/"+scene+".tscn");
+		if(currentScene != null)
+		{
+			currentScene.QueueFree();
+		}
+
+		PackedScene newScene = scenes[index];
+		currentScene = newScene.Instantiate();
+
+		if(currentScene is ManagedScene managedScene)
+		{
+			managedScene.Setup(this);
+		}
+
+		AddChild(currentScene);
 	}
 }
