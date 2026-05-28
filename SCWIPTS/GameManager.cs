@@ -20,7 +20,7 @@ public partial class GameManager : Node
 	// Gets the highscore if there is one
 	public float LoadScore()
 	{
-		if(!FileAccess.FileExists(savePath)){ GD.Print("fucekr");return 0.0f;}
+		if(!FileAccess.FileExists(savePath)){ GD.Print("No save file");return 0.0f;}
 
 		using var file = FileAccess.Open(savePath,FileAccess.ModeFlags.Read);
 
